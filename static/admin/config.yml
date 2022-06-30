@@ -16,7 +16,7 @@ collections:
       preview: true
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Body", name: "description", widget: "markdown" }
+      - { label: "Body", name: "content", widget: "markdown" }
   - name: "sidebar"
     label: "Seiten Navigaion"
     format: "json"
@@ -41,8 +41,7 @@ collections:
     editor:
       preview: true
     fields:
-      - { label: "Überschrift", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Name der Speisekarte", name: "title", widget: "string" }
       - label: "Speisen"
         name: "speisen"
         widget: "list"
