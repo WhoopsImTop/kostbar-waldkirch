@@ -2,6 +2,8 @@ backend:
   name: git-gateway
   branch: main
 
+publish_mode: editorial_workflow
+
 media_folder: static/img
 public_folder: /img
 
@@ -47,5 +49,5 @@ collections:
         add_to_top: true
         fields:
           - {label: Gericht, name: food, widget: string }
-          - {label: Beilage (Optional), name: garnish, widget: string, requires: false }
+          - {label: Beilage (Optional), name: garnish, widget: string, required: false }
           - {label: Preis, name: price, widget: number, value_type: "float" }
