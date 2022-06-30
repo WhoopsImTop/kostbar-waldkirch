@@ -37,7 +37,6 @@ collections:
     folder: "content/menu"
     create: true
     slug: "{{slug}}"
-    widget: "list"
     editor:
       preview: true
     fields:
@@ -45,7 +44,8 @@ collections:
       - label: "Speisen"
         name: "speisen"
         widget: "list"
+        add_to_top: true
         fields:
           - {label: Gericht, name: food, widget: string }
-          - {label: Beilage (Optional), name: garnish, widget: string }
+          - {label: Beilage (Optional), name: garnish, widget: string, requires: false }
           - {label: Preis, name: price, widget: number, value_type: "float" }
