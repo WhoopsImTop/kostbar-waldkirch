@@ -1,0 +1,10 @@
+{
+  "title": "Test",
+  "speisen": [
+    {
+      "food": "test",
+      "garnish": "",
+      "price": 2.5
+    }
+  ]
+}
