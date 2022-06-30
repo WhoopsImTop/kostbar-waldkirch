@@ -48,4 +48,4 @@ collections:
         fields:
           - {label: Gericht, name: food, widget: string }
           - {label: Beilage (Optional), name: garnish, widget: string }
-          - {label: Preis, name: price, widget: number }
+          - {label: Preis, name: price, widget: number, value_type: "float" }
