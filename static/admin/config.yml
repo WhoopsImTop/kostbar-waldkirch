@@ -61,8 +61,6 @@ collections:
     editor:
       preview: true
     fields:
-      - { label: "Überschrift", name: "title", widget: "string" }
-      - { label: "Untertitel", name: "subtitle", widget: "string" }
       - label: "Testimonials"
         name: "testimonials"
         widget: "list"
