@@ -66,6 +66,8 @@ collections:
         widget: "list"
         summary: '{{fields.quote}} - {{fields.author.name}}'
         fields:
+          - { label: "Überschrift", name: "title", widget: "string" }
+          - { label: "Publish Date", name: "date", widget: "datetime" }
           - {label: Quote, name: quote, widget: string, default: "Everything is awesome!"}
           - label: Author
             name: author
