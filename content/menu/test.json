@@ -1,10 +1,51 @@
 {
-  "title": "Test",
+  "title": "Abholbar Mittags",
   "speisen": [
     {
-      "food": "test",
+      "food": "Burger \"Special\" Bacon Cheese Spiegelei",
+      "garnish": "Pommes",
+      "price": 10
+    },
+    {
+      "food": "Black Forest Bacon Pilze",
+      "garnish": "Pommes",
+      "price": 10
+    },
+    {
+      "food": "Mika Burger Bacon Cheese",
+      "garnish": "Pommes",
+      "price": 9
+    },
+    {
+      "food": "Mika Burger Cheese",
+      "garnish": "Pommes",
+      "price": 9
+    },
+    {
+      "food": "Mika Burger Klassik",
+      "garnish": "Pommes",
+      "price": 8.5
+    },
+    {
+      "food": "Cordon Bleu mit Spätzle und Pilzrahmsauce",
+      "price": 10
+    },
+    {
+      "food": "Schnitzel mit Spätzle und Pilzrahmsauce",
+      "price": 9
+    },
+    {
+      "food": "Currywurst mit Pommes",
+      "price": 5
+    },
+    {
+      "food": "Gemischter Salat (Rohkost und Blattsalat)",
+      "price": 5
+    },
+    {
+      "food": "Täglich frischer Mittagstisch*",
       "garnish": "",
-      "price": 2.5
+      "price": 7.5
     }
   ]
 }
