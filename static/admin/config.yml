@@ -6,24 +6,6 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: "blog"
-    label: "Blog"
-    format: "json"
-    folder: "content/blog"
-    create: true
-    slug: "{{slug}}"
-    editor:
-      preview: true
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - {
-          label: "Featured Image",
-          name: "thumbnail",
-          widget: "image",
-          required: true,
-        }
-      - { label: "Body", name: "body", widget: "markdown" }
   - name: "infos"
     label: "Aktuelles"
     format: "json"
@@ -34,8 +16,7 @@ collections:
       preview: true
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Body", name: "description", widget: "markdown" }
   - name: "sidebar"
     label: "Seiten Navigaion"
     format: "json"
@@ -46,7 +27,6 @@ collections:
       preview: true
     fields:
       - { label: "Überschrift", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Untertitel", name: "subtitle", widget: "string" }
       - { label: "Link Text", name: "linkText", widget: "string" }
       - { label: "Link Adresse", name: "link", widget: "string" }
@@ -63,15 +43,10 @@ collections:
     fields:
       - { label: "Überschrift", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
-      - label: "Testimonials"
-        name: "testimonials"
+      - label: "Speisen"
+        name: "speisen"
         widget: "list"
-        summary: '{{fields.quote}} - {{fields.author.name}}'
         fields:
-          - {label: Quote, name: quote, widget: string, default: "Everything is awesome!"}
-          - label: Author
-            name: author
-            widget: object
-            fields:
-              - {label: Name, name: name, widget: string, default: "Emmet"}
-              - {label: Avatar, name: avatar, widget: image, default: "/img/emmet.jpg"}
+          - {label: Gericht, name: food, widget: string }
+          - {label: Beilage (Optional), name: garnish, widget: string }
+          - {label: Preis, name: price, widget: number }
