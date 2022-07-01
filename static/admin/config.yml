@@ -62,9 +62,9 @@ collections:
     fields:
       - { label: "Name der Speisekarte", name: "title", widget: "string" }
       - { label: "Untertitel(optional)", name: "subtitle", widget: "string", required: false }
-      - label: "Platzierung (Optional)",
-        name: "placed",
-        widget: "widget",
+      - label: "Platzierung (Optional)"
+        name: "placed"
+        widget: "select"
         options:
           - { label: "Startseite", value: "Startseite" }
       - label: "Speisen"
