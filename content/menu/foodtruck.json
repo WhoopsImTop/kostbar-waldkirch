@@ -1,0 +1,11 @@
+{
+    "title": "Foodtruck",
+    "speisen": [
+        {
+            "food": "Burger \"Special\" Bacon Cheese Spiegelei",
+            "garnish": "Pommes",
+            "price": 10
+        }
+    ],
+    "content": ""
+}

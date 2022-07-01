@@ -1,17 +1,24 @@
 <template>
-  <div>
-    <Header></Header>
-    <div class="content-container" style="margin-top: 130px;">
-    <h1 style="margin-bottom: 0px;">Täglich frisch.<br>
-      Lecker Essen.</h1>
-    <h3 style="margin-top: 0px; text-transform: uppercase; font-weight: 400">Morgens <span class="green">|</span>
-      Mittags <span class="green">|</span> Abends</h3>
-    <div class="grid">
-      <nuxt class="grid-item-1"/>
-      <div class="grid-item-2"></div>
-      <Sidebar class="grid-item-3"/>
+  <div class="homepage-container">
+    <div v-for="(menuText, index) in menuTexts" :key="index" >
+      <div class="row">
+        <h2>{{ menuText.title }} <br> <h3 v-show="menuText.subtitle" style="margin: 0px; font-size: 16px; line-height: 16px;">{{ menuText.subtitle }}</h3></h2>
+        <h3 v-if="index == 0" class="smaller-font">Bestellen unter: <br> <a class="link" href="tel:076124262728">0761 242 627 28</a></h3>
+      </div>
+
+      <div class="menu">
+        <div style="margin-bottom: 40px;" v-for="(item, index) in menuText.speisen" :key="index">
+          <div class="menu-entry">
+            <div class="col">
+              <h3>{{ item.food }}</h3>
+            </div>
+            <div class="border"></div>
+            <p>{{ item.price.toFixed(1) }} €</p>
+          </div>
+          <p v-show="item.garnish">{{ item.garnish }}</p>
+        </div>
+      </div>
     </div>
-  </div>
   </div>
 </template>
 
@@ -19,63 +26,73 @@
 import Header from '../components/Header.vue';
 import Sidebar from '../components/Sidebar.vue';
 export default {
-    components: { Header, Sidebar },
+  components: { Header, Sidebar },
+  layout: 'main',
+  data: () => {
+    return {
+      menuTexts: [{
+        title: "",
+        speisen: [{
+          food: "",
+          price: 0,
+          garnish: ""
+        }]
+      }],
+    }
+  },
+  async beforeMount() {
+    let menuTexts = await this.$content("menu").where({ placed: 'Startseite' }).fetch();
+    console.log(menuTexts)
+    this.menuTexts = menuTexts;
+  },
 };
 </script>
 
-<style>
-* {
-  font-family: 'Poppins', Arial, Helvetica, sans-serif
+<style scoped>
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-:root {
-  --text-dark: #000000;
-  --orange-color: #e83414;
-  --green-color: #539E33;
+.col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-h1 {
-  font-size: 80px;
-  line-height: 90px;
-  font-weight: 900;
-  text-transform: uppercase;
+.menu-entry h3 {
+  font-size: 30px;
+  line-height: 30px;
+  margin: 0px;
+  min-width: max-content;
 }
 
-h2 {
-  font-size: 40px;
-  line-height: 50px;
-  text-transform: uppercase;
+p {
+  margin: 5px 0;
+  font-size: 20px;
+  min-width: max-content;
 }
 
-h3 {
-  font-size: 40px;
-  line-height: 50px;
+.border {
+  border-bottom: 2px dashed var(--text-dark);
+  width: 100%;
+  margin: 0px 20px 10px 20px;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: 8fr 1fr 3fr;
+.menu-entry {
+  display: flex;
+  flex-direction: row;
 }
 
-.grid-item-1 {
-  grid-column: 1
+.smaller-font {
+  font-size: 25px;
+  line-height: 25px;
 }
 
-.grid-item-2 {
-  grid-column: 2
-}
-
-.grid-item-3 {
-  grid-column: 3
-}
-
-.content-container {
-  max-width: 1440px;
-  padding: 0 50px;
-  margin: 0 auto;
-}
-
-.green {
-  color: var(--green-color)
+.menu {
+  padding: 30px;
+  background-color: var(--menu-bg-color);
+  border: 2px solid var(--menu-border-color);
 }
 </style>

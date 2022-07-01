@@ -1,9 +1,13 @@
 <template>
     <div class="navigation-background">
         <div class="navigation-content-container">
-            <KostbarLogo class="grid-item-1" width="150" />
-            <div class="burger grid-item-3"></div>
-            <div class="navigation-content grid-item-3">
+            <nuxt-link to="/"><KostbarLogo class="grid-item-1" width="150" /></nuxt-link>
+            <div class="burger grid-item-3" @click="active = !active" :class="active ? 'active' : ''">
+                <div class="line-1"></div>
+                <div class="line-2"></div>
+                <div class="line-3"></div>
+            </div>
+            <div class="navigation-content grid-item-3" :class="active ? 'active' : ''">
                 <p class="thin">
                     Tel: <a href="tel:076124262728">0761 242 627 28</a>
                     <br>
@@ -11,10 +15,10 @@
                 </p>
                 <hr>
                 <div class="nav-links">
-                    <a class="nav-link">Tageskarte</a>
-                    <a class="nav-link">Burgerkarte</a>
-                    <a class="nav-link">Foodtruck</a>
-                    <a class="nav-link">Kontakt</a>
+                    <nuxt-link class="nav-link" to="/">Tageskarte</nuxt-link>
+                    <nuxt-link class="nav-link" to="/menu/burger">Burgerkarte</nuxt-link>
+                    <nuxt-link class="nav-link" to="/menu/foodtruck">Foodtruck</nuxt-link>
+                    <nuxt-link class="nav-link" to="/kontakt">Kontakt</nuxt-link>
                 </div>
             </div>
         </div>
@@ -26,6 +30,11 @@ import KostbarLogo from '../components/KostbarLogo.vue';
 export default {
     components: {
         KostbarLogo
+    },
+    data: () => {
+        return {
+            active: false
+        }
     }
 }
 </script>
@@ -104,13 +113,65 @@ a {
     color: var(--text-dark)
 }
 
+.burger {
+    display: none;
+}
+
+.line-1, .line-2, .line-3 {
+    width: 30px;
+    height: 3px;
+    background-color: var(--menu-bg-color);
+    margin: 3px 0;
+    transition: .3s ease-in-out;
+}
+
 a:hover {
     cursor: pointer;
 }
 
-@media (max-width: 1080px) {
+@media (max-width: 1349px) {
+    .navigation-content-container {
+        display: flex;
+        justify-content: space-between;
+    }
+
     .navigation-content {
-        display: none;
+        opacity: 0;
+        left: 0px;
+        right: 0px;
+        top: 100px;
+        transition: .5s ease-in-out;
+        min-height: 0px;
+        height: 0px;
+        overflow: hidden;
+    }
+
+    .burger {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+    }
+
+    .active .line-1 {
+        transform: rotate(45deg) translate(6.25px, 6.5px);
+    }
+
+    .active .line-2 {
+        width: 0px;
+    }
+
+    .active .line-3 {
+        transform: rotate(-45deg) translate(6.25px, -6.5px);
+    }
+
+    .navigation-content.active {
+        opacity: 1;
+        top: 100px;
+        transition: height .5s ease-in-out;
+        height: 300px;
+        overflow: hidden;
+        display: block;
     }
 }
 </style>

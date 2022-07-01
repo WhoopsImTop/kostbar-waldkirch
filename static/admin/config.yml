@@ -51,3 +51,39 @@ collections:
           - {label: Gericht, name: food, widget: string }
           - {label: Beilage (Optional), name: garnish, widget: string, required: false }
           - {label: Preis, name: price, widget: number, value_type: "float" }
+  - name: "mittagstisch"
+    label: "Mittagstisch"
+    format: "json"
+    folder: "content/mittagstisch"
+    create: true
+    slug: "{{slug}}"
+    editor:
+      preview: true
+    fields:
+      - { label: "Name der Speisekarte", name: "title", widget: "string" }
+      - { label: "Untertitel(optional)", name: "subtitle", widget: "string", required: false }
+      - label: "Platzierung (Optional)",
+        name: "placed",
+        widget: "widget",
+        options:
+      - { label: "Startseite", value: "Startseite" }
+      - label: "Speisen"
+        name: "speisen"
+        widget: "list"
+        description: "Auswählen wenn das Menü auf der Startseite gezeigt werden soll."
+        add_to_top: true
+        fields:
+          - {label: Gericht, name: food, widget: string }
+          - {label: Beilage (Optional), name: garnish, widget: string, required: false }
+          - {label: Preis, name: price, widget: number, value_type: "float" }
+  - name: "important"
+    label: "Wichtige Seiten"
+    format: "markdown"
+    folder: "content"
+    create: true
+    slug: "{{slug}}"
+    editor:
+      preview: true
+    fields:
+      - { label: "Überschrift", name: "title", widget: "string" }
+      - { label: "Beschreibung", name: "description", widget: "markdown" }
