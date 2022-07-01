@@ -79,7 +79,7 @@ collections:
   - name: "important"
     label: "Wichtige Seiten"
     format: "markdown"
-    folder: "content"
+    folder: "content/"
     create: true
     slug: "{{slug}}"
     editor:
