@@ -147,4 +147,35 @@ p {
     grid-column: 1
   }
 }
+
+@media (max-width: 1349px) {
+  .menu {
+    padding: 20px;
+  }
+
+  p {
+    font-size: 18px;
+    margin: 0;
+  }
+
+  .border {
+    display: none;
+  }
+
+  .price {
+    align-self: flex-end;
+    margin: 0 0 0 20px;
+  }
+
+  .menu-entry {
+    justify-content: space-between;
+  }
+
+  .menu-entry h3 {
+    font-size: 20px;
+    line-height: 30px;
+    margin: 0px;
+    min-width: auto;
+  }
+}
 </style>
