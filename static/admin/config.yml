@@ -43,6 +43,11 @@ collections:
       preview: true
     fields:
       - { label: "Name der Speisekarte", name: "title", widget: "string" }
+      - label: "Platzierung"
+        name: "placed"
+        widget: "select"
+        options:
+          - { label: "Startseite", value: "Startseite" }
       - label: "Speisen"
         name: "speisen"
         widget: "list"
