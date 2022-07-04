@@ -78,7 +78,7 @@ collections:
           - {label: Preis, name: price, widget: number, value_type: "float" }
   - name: "important"
     label: "Wichtige Seiten"
-    format: "md"
+    format: "json"
     folder: "content/"
     create: true
     slug: "{{slug}}"
