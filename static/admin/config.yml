@@ -51,6 +51,7 @@ collections:
           - {label: Gericht, name: food, widget: string }
           - {label: Beilage (Optional), name: garnish, widget: string, required: false }
           - {label: Preis, name: price, widget: number, value_type: "float" }
+      - { label: "Extra Beschreibung", name: "description", widget: "markdown" }
   - name: "mittagstisch"
     label: "Mittagstisch"
     format: "json"
