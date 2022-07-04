@@ -16,7 +16,7 @@
                 <hr>
                 <div class="nav-links">
                     <nuxt-link class="nav-link" to="/">Tageskarte</nuxt-link>
-                    <nuxt-link class="nav-link" to="/menu/burger">Burgerkarte</nuxt-link>
+                    <nuxt-link class="nav-link" to="/menu/burgerkarte">Burgerkarte</nuxt-link>
                     <nuxt-link class="nav-link" to="/menu/foodtruck">Foodtruck</nuxt-link>
                     <nuxt-link class="nav-link" to="/kontakt">Kontakt</nuxt-link>
                 </div>

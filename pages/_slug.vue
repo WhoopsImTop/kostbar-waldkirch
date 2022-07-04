@@ -1,6 +1,7 @@
 <template>
     <div class="content">
-        <nuxt-content :document="article" />
+        <h1>{{ article.title }}</h1>
+        <p v-html="$md.render(article.description)"></p>
     </div>
 </template>
 

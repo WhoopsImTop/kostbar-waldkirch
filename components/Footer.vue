@@ -7,7 +7,6 @@
                     <div class="link-container">
                         <nuxt-link to="/impressum">Impressum</nuxt-link>
                         <nuxt-link to="/datenschutz">Datenschutz</nuxt-link>
-                        <nuxt-link to="/cookie-einstellungen">Cookie Einstellungen</nuxt-link>
                     </div>
                 </div>
                 <div class="copyright">

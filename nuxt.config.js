@@ -14,7 +14,9 @@ export default {
         content: process.env.npm_package_description || ""
       }
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.png" }]
+    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.png" }],
+    link: [{ rel:"stylesheet", href:"https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;0,800;0,900;1,400&display=swap" }]
+   
   },
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
