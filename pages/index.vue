@@ -1,7 +1,7 @@
 <template>
     <div class="homepage-container">
 
-        <div v-for="(menuText, i) in menuTexts" :key="i">
+        <div v-for="(menuText, i) in $store.state.mainMenu" :key="i">
 
             <div class="row">
 
@@ -72,10 +72,8 @@ export default {
             }],
         }
     },
-    async beforeMount() {
-        let menuTexts = await this.$content("menu").where({ placed: 'Startseite' }).fetch();
-        console.log(menuTexts)
-        this.menuTexts = menuTexts;
+    async fetch({ params, store: { dispatch, getters } }) {
+        await dispatch('getMainMenus')
     },
 };
 </script>

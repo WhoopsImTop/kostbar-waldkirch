@@ -1,11 +1,10 @@
 <template>
   <div class="sidebar">
-    <h2>{{ infoText.title }}</h2>
     <div class="notice-bon">
-      <p v-html="$md.render(infoText.content)"></p>
+      
     </div>
 
-    <div v-for="link in sidebarNavItems" :key="link.title">
+    <div v-for="link in $store.state.sidebarNavigation" :key="link.title">
       <h2 style="margin-bottom: 0px;">{{ link.title }}</h2>
       <span v-show="link.subtitle">{{ link.subtitle }}</span>
       <p v-html="$md.render(link.description)"></p>
@@ -16,21 +15,6 @@
 
 <script>
 export default {
-  data() {
-    return {
-      infoText: {
-        title: '',
-        content: '',
-      },
-      sidebarNavItems: [],
-    }
-  },
-  async beforeMount() {
-    let infoText = await this.$content("infos").where({ title: 'Aktuelles' }).fetch();
-    let sidebarNavLinks = await this.$content("sidebarNav").fetch();
-    this.infoText = infoText[0];
-    this.sidebarNavItems = sidebarNavLinks;
-  },
 }
 </script>
 
