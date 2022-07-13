@@ -1,7 +1,8 @@
 <template>
   <div class="sidebar">
+    <h2>{{ $store.state.infos[0].title }}</h2>
     <div class="notice-bon">
-      
+      <p v-html="$md.render($store.state.infos[0].content)"></p>
     </div>
 
     <div v-for="link in $store.state.sidebarNavigation" :key="link.title">

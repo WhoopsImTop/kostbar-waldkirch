@@ -1,9 +1,27 @@
 export const state = () => ({
-  sidebarNavigation: [],
-  infos: null,
+  sidebarNavigation: [{
+    title: '',
+    subtitle: '',
+    description: '',
+    linkText: ''
+  }],
+  infos: [{
+    title: '',
+    content: '',
+  }],
   mainMenus: [],
   otherMenus: [],
 });
+
+export const getters = {
+    getSidebarNav: (state) => JSON.parse(state.sidebarNavigation),
+    
+    getInfos: (state) => JSON.parse(state.infos),
+    
+    getMainMenus: (state) => JSON.parse(state.mainMenus),
+
+    getOtherMenus: (state) => JSON.parse(state.otherMenus),
+}
 
 export const mutations = {
   setSidebarNavigation(state, payload) {

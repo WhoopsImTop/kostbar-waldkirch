@@ -21,9 +21,9 @@ import Header from '../components/Header.vue';
 import Sidebar from '../components/Sidebar.vue';
 import Footer from '../components/Footer.vue';
 export default {
-  fetch({ params, store: { dispatch, getters } }) {
-    dispatch('getSidebarNav')
+  fetch({ store: { dispatch, getters } }) {
     dispatch('getInfos')
+    dispatch('getSidebarNav')
     dispatch('getMainMenus')
     dispatch('getOtherMenus')
   },
