@@ -1,7 +1,7 @@
 <template>
     <div class="homepage-container">
 
-        <div v-for="(menuText, i) in $store.state.mainMenu" :key="i">
+        <div v-for="(menuText, i) in $store.state.mainMenus" :key="i">
 
             <div class="row">
 
@@ -72,9 +72,13 @@ export default {
             }],
         }
     },
-    async fetch({ params, store: { dispatch, getters } }) {
+/* 
+    async fetch({ store: { dispatch, getters } }) {
+        await dispatch('getInfos')
+        await dispatch('getSidebarNav')
         await dispatch('getMainMenus')
-    },
+        await dispatch('getOtherMenus')
+    }, */
 };
 </script>
 

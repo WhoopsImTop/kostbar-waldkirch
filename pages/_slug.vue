@@ -21,6 +21,12 @@ export default {
             ]
         };
     },
+    async fetch({ store: { dispatch, getters } }) {
+        await dispatch('getInfos')
+        await dispatch('getSidebarNav')
+        await dispatch('getMainMenus')
+        await dispatch('getOtherMenus')
+    },
     async asyncData({ $content, params }) {
         const article = await $content(params.slug).fetch();
 

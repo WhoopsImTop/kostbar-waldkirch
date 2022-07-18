@@ -1,7 +1,7 @@
 <template>
     <div class="navigation-background">
         <div class="navigation-content-container">
-            <nuxt-link to="/"><KostbarLogo class="grid-item-1" width="150" /></nuxt-link>
+            <nuxt-link to="/"><KostbarLogo class="grid-item-1" width="150" title="kost|bar Waldkirch" alt="kost|bar Waldkirch Logo"/></nuxt-link>
             <div class="burger grid-item-3" @click="active = !active" :class="active ? 'active' : ''">
                 <div class="line-1"></div>
                 <div class="line-2"></div>

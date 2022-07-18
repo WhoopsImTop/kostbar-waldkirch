@@ -10,7 +10,7 @@ export const state = () => ({
     content: '',
   }],
   mainMenus: [],
-  otherMenus: [],
+  subMenus: [],
 });
 
 export const getters = {
@@ -20,7 +20,7 @@ export const getters = {
     
     getMainMenus: (state) => JSON.parse(state.mainMenus),
 
-    getOtherMenus: (state) => JSON.parse(state.otherMenus),
+    setSubMenus: (state) => JSON.parse(state.subMenus),
 }
 
 export const mutations = {
@@ -33,7 +33,7 @@ export const mutations = {
   setMainMenus(state, payload) {
     state.mainMenus = payload;
   },
-  setOtherMenus(state, payload) {
+  setSubMenus(state, payload) {
     state.otherMenus = payload;
   },
 };
@@ -45,7 +45,6 @@ export const actions = {
   },
   async getInfos({ commit }, callback) {
     const infos = await this.$content("infos").fetch();
-    console.log(infos);
     commit("setInfos", infos);
   },
   async getMainMenus({ commit }, callback) {
@@ -54,8 +53,8 @@ export const actions = {
       .fetch();
     commit("setMainMenus", mainMenu);
   },
-  getOtherMenus({ commit }, callback) {
-    const subMenus = this.$content("menu").fetch();
+  async getOtherMenus({ commit }, callback) {
+    const subMenus = await this.$content("menu").fetch();
     commit("setSubMenus", subMenus);
   },
 };

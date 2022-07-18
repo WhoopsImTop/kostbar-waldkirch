@@ -21,11 +21,11 @@ import Header from '../components/Header.vue';
 import Sidebar from '../components/Sidebar.vue';
 import Footer from '../components/Footer.vue';
 export default {
-  fetch({ store: { dispatch, getters } }) {
-    dispatch('getInfos')
-    dispatch('getSidebarNav')
-    dispatch('getMainMenus')
-    dispatch('getOtherMenus')
+  fetch() {
+    this.$store.dispatch('getInfos');
+    this.$store.dispatch('getSidebarNav');
+    this.$store.dispatch('getMainMenus');
+    this.$store.dispatch('getOtherMenus');
   },
   components: { Header, Sidebar, Footer },
 };

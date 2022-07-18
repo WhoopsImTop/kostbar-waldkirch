@@ -9,7 +9,7 @@
       <h2 style="margin-bottom: 0px;">{{ link.title }}</h2>
       <span v-show="link.subtitle">{{ link.subtitle }}</span>
       <p v-html="$md.render(link.description)"></p>
-      <a v-show="link.link" :href="link.link" class="link">{{ link.linkText }}</a>
+      <a v-if="link.link" :href="link.link" class="link">{{ link.linkText }}</a>
     </div>
   </div>
 </template>
