@@ -25,15 +25,14 @@
                     <button class="downloadBtn" @click="generate(menuText)"><img src="/download.svg"></button>
                 </div>
 
-                <div style="margin-bottom: 40px;"
-                    :style="i != 0 ? 'margin-bottom: 50px; margin-top: 10px;' : 'margin-bottom: 40px;'"
+                <div style="margin-bottom: 40px;" :class="i != 0 ? 'm-tb' : 'm-b'"
                     v-for="(item, index) in menuText.speisen" :key="index">
 
                     <div class="menu-entry">
 
                         <div class="col" style="position: relative;">
-                            <h4 v-if="i != 0"
-                                style="margin-bottom: 0px; height: 0px; position: absolute; bottom: 60px;">{{
+                            <h4 v-if="i != 0" class="mb-60"
+                                style="margin-top: -16px; margin-bottom: 0px;">{{
                                         weekday[index % 7]
                                 }}</h4>
                             <h3>{{ item.food }}</h3>
@@ -121,6 +120,10 @@ p {
     min-width: max-content;
 }
 
+.mb-60 {
+    bottom: 60px;
+}
+
 .border {
     border-bottom: 2px dashed var(--text-dark);
     width: 100%;
@@ -175,11 +178,28 @@ p {
     height: 0px;
 }
 
+.m-tb {
+    margin-bottom: 50px;
+    margin-top: 10px;
+}
+
+.m-b {
+    margin-bottom: 40px;
+}
+
 .link {
     color: var(--green-color);
 }
 
 @media (max-width: 1349px) {
+    .m-tb {
+        margin-bottom: 85px;
+        margin-top: 10px;
+    }
+    .m-b {
+        margin-bottom: 40px;
+    }
+
     .grid {
         grid-template-columns: 1fr;
     }
@@ -237,7 +257,11 @@ p {
 
 @media (max-width: 1349px) {
     .menu {
-        padding: 20px;
+        padding: 20px 30px 20px 20px;
+    }
+
+    .menu-entry h3 {
+        padding-right: 5px;
     }
 
     p {
