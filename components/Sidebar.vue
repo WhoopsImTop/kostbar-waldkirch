@@ -9,7 +9,7 @@
       <h2 style="margin-bottom: 0px;">{{ link.title }}</h2>
       <span v-show="link.subtitle">{{ link.subtitle }}</span>
       <p v-html="$md.render(link.description)"></p>
-      <a v-if="link.link" :href="link.link" class="link">{{ link.linkText }}</a>
+      <nuxt-link v-if="link.link" :to="link.link" class="link">{{ link.linkText }}</nuxt-link>
     </div>
   </div>
 </template>

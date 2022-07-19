@@ -30,13 +30,13 @@ export default {
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: [{ src: "~/plugins/generatePDF.js" }],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [],
+  buildModules: ["nuxt-compress"],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
@@ -46,6 +46,15 @@ export default {
     "@nuxt/content",
     "@nuxtjs/markdownit",
   ],
+
+  "nuxt-compress": {
+    gzip: {
+      threshold: 8192,
+    },
+    brotli: {
+      threshold: 8192,
+    },
+  },
 
   markdownit: {
     runtime: true, // Support `$md()`

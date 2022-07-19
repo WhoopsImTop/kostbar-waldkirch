@@ -21,6 +21,9 @@
 
 
             <div class="menu">
+                <div class="menu-action-container">
+                    <button class="downloadBtn" @click="generate(menuText)"><img src="/download.svg"></button>
+                </div>
 
                 <div style="margin-bottom: 40px;"
                     :style="i != 0 ? 'margin-bottom: 50px; margin-top: 10px;' : 'margin-bottom: 40px;'"
@@ -72,13 +75,23 @@ export default {
             }],
         }
     },
-/* 
-    async fetch({ store: { dispatch, getters } }) {
-        await dispatch('getInfos')
-        await dispatch('getSidebarNav')
-        await dispatch('getMainMenus')
-        await dispatch('getOtherMenus')
-    }, */
+    methods: {
+        generate(menu) {
+            this.generatePDF(menu, true);
+        },
+        async share(menu) {
+
+            // share the pdf
+            let pdf = this.generatePDF(menu, false);
+
+            // navigator.share the pdf
+            await navigator.share({
+                title: "",
+                text: "",
+                files: [pdf]
+            });
+        },
+    },
 };
 </script>
 
@@ -114,6 +127,27 @@ p {
     margin: 0px 20px 10px 20px;
 }
 
+.downloadBtn {
+    background-color: var(--menu-bg-color);
+    border-radius: 50%;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+}
+
+.downloadBtn:hover {
+    background-color: var(--green-color);
+    cursor: pointer;
+}
+
+.downloadBtn img {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 5px;
+}
+
 .menu-entry {
     display: flex;
     flex-direction: row;
@@ -125,9 +159,20 @@ p {
 }
 
 .menu {
+    position: relative;
     padding: 30px;
     background-color: var(--menu-bg-color);
     border: 2px solid var(--menu-border-color);
+}
+
+.menu-action-container {
+    position: sticky;
+    margin-right: -55px;
+    top: 135px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 0px;
 }
 
 .link {
