@@ -59,11 +59,12 @@ collections:
           - {label: Gericht, name: food, widget: string }
           - {label: Beilage (Optional), name: garnish, widget: string, required: false }
           - {label: Preis, name: price, widget: number, value_type: "float" }
-          - {label: Geschlossen?, name: closed, widget: boolean, default: false }
+          - {label: Geschlossen?, name: closed, widget: boolean, default: false, required: false }
           - label: "Grund"
             name: "reason"
             widget: "select"
             required: false
+            default: false
             options:
               - { label: "Foodtruck on tour", value: "Foodtruck on tour" }
               - { label: "Personalmangel", value: "Personalmangel" }
