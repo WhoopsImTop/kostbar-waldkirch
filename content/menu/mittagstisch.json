@@ -5,27 +5,34 @@
   "speisen": [
     {
       "food": "Leider zu",
-      "garnish": "Foodtruck on Tour",
-      "price": 0
+      "garnish": "",
+      "price": 0,
+      "closed": true,
+      "reason": "Foodtruck on tour"
     },
     {
       "food": "Gebr. Fischfilet",
       "garnish": "Reis und Gemüse",
-      "price": 8
+      "price": 8,
+      "closed": false
     },
     {
       "food": "Wurstsalat / Bililiskäs",
       "garnish": "Kartoffeln",
-      "price": 8
+      "price": 8,
+      "closed": false
     },
     {
       "food": "Polofino BBQ",
       "garnish": "Pommes",
-      "price": 8
+      "price": 8,
+      "closed": false
     },
     {
       "food": "Leider zu / Personalmangel",
-      "price": 0
+      "price": 0,
+      "closed": true,
+      "reason": "Personalmangel"
     }
   ]
 }
