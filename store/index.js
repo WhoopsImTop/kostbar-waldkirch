@@ -51,6 +51,8 @@ export const actions = {
     const mainMenu = await this.$content("menu")
       .where({ placed: "Startseite" })
       .fetch();
+    //order by position
+    mainMenu.sort((a, b) => a.position - b.position);
     commit("setMainMenus", mainMenu);
   },
   async getOtherMenus({ commit }, callback) {
