@@ -56,6 +56,9 @@ collections:
         widget: "list"
         add_to_top: true
         fields:
+          - {label: Gericht, name: food, widget: string }
+          - {label: Beilage (Optional), name: garnish, widget: string, required: false }
+          - {label: Preis, name: price, widget: number, value_type: "float" }
           - {label: Geschlossen?, name: closed, widget: boolean, default: false }
           - label: "Grund"
             name: "reason"
@@ -64,9 +67,6 @@ collections:
             options:
               - { label: "Foodtruck on tour", value: "Foodtruck on tour" }
               - { label: "Personalmangel", value: "Personalmangel" }
-          - {label: Gericht, name: food, widget: string }
-          - {label: Beilage (Optional), name: garnish, widget: string, required: false }
-          - {label: Preis, name: price, widget: number, value_type: "float" }
       - { label: "Extra Beschreibung", name: "description", widget: "markdown", required: false }
   - name: "important"
     label: "Wichtige Seiten"
