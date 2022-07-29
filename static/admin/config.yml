@@ -46,10 +46,11 @@ collections:
       - label: "Platzierung"
         name: "placed"
         widget: "select"
+        required: false
         options:
           - { label: "", value: "" }
           - { label: "Startseite", value: "Startseite" }
-      - { label: "Position", name: "position", widget: "number" }
+      - { label: "Position", name: "position", widget: "number", required: false }
       - label: "Speisen"
         name: "speisen"
         widget: "list"
