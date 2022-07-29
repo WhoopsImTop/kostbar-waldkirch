@@ -1,0 +1,30 @@
+{
+  "title": "Mittagstisch",
+  "placed": "Startseite",
+  "speisen": [
+    {
+      "food": "Leider zu",
+      "garnish": "Foodtruck on Tour",
+      "price": 0
+    },
+    {
+      "food": "Gebr. Fischfilet",
+      "garnish": "Reis und Gemüse",
+      "price": 8
+    },
+    {
+      "food": "Wurstsalat / Bililiskäs",
+      "garnish": "Kartoffeln",
+      "price": 8
+    },
+    {
+      "food": "Polofino BBQ",
+      "garnish": "Pommes",
+      "price": 8
+    },
+    {
+      "food": "Leider zu / Personalmangel",
+      "price": 0
+    }
+  ]
+}
