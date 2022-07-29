@@ -1,53 +1,67 @@
 {
   "title": "Burgerkarte",
   "subtitle": "",
-  "placed": "",
+  "placed": "Startseite",
   "speisen": [
     {
-      "food": "Täglich frischer Mittagstisch*",
-      "garnish": "",
-      "price": 7.5
+      "food": "Klassik",
+      "garnish": "Zwibel, Tomate, Gurke",
+      "price": 7
     },
     {
-      "food": "Gemischter Salat (Rohkost und Blattsalat)",
-      "price": 5
+      "food": "Cheese",
+      "price": 7.5,
+      "garnish": "Käse, Zwiebel, Tomate, Gurke"
     },
     {
-      "food": "Currywurst mit Pommes",
-      "price": 5
+      "food": "Black Forest",
+      "price": 8,
+      "garnish": "Pilze, Bacon, Käse"
     },
     {
-      "food": "Schnitzel mit Spätzle und Pilzrahmsauce",
-      "price": 9
+      "food": "Spezial",
+      "price": 8.5,
+      "garnish": "Bacon, Ei, Käse"
     },
     {
-      "food": "Mika Burger Klassik",
-      "garnish": "Pommes",
+      "food": "Kandel",
+      "garnish": "Roucula, Preiselbeermeerrettich, Gorgonzola",
       "price": 8.5
     },
     {
-      "food": "Mika Burger Cheese",
-      "garnish": "Pommes",
-      "price": 9
+      "food": "Veggi",
+      "garnish": "Hausgemachter Gemüsebratling, Rucola, Goudakäse",
+      "price": 7
     },
     {
-      "food": "Mika Burger Bacon Cheese",
-      "garnish": "Pommes",
-      "price": 9
+      "food": "Tropical",
+      "garnish": "Hähnchenbrust, Rucola, Mangochutneym Käse",
+      "price": 8
     },
     {
-      "food": "Black Forest Bacon Pilze",
-      "garnish": "Pommes",
-      "price": 10
+      "food": "Doppeldecker",
+      "garnish": "",
+      "price": 12
     },
     {
-      "food": "Burger \"Special\" Bacon Cheese Spiegelei",
-      "garnish": "Pommes",
-      "price": 10
+      "food": "Pommes zum Burger",
+      "garnish": "Mayonnaise, Ketchup",
+      "price": 1.5
     },
     {
-      "food": "Cordon Bleu mit Spätzle und Pilzrahmsauce",
-      "price": 10
+      "food": "Portion Pommes",
+      "price": 2,
+      "garnish": "Mayonnaise, Ketchup"
+    },
+    {
+      "food": "Saisonal Gemischter Salat",
+      "garnish": "klein",
+      "price": 3
+    },
+    {
+      "food": "Saisonal Gemischter Salat",
+      "garnish": "Groß",
+      "price": 5
     }
   ]
 }
