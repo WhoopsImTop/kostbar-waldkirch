@@ -1,6 +1,7 @@
 {
   "title": "Mittagstisch",
   "placed": "Startseite",
+  "position": 2,
   "speisen": [
     {
       "food": "Leider zu",

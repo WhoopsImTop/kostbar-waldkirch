@@ -2,6 +2,7 @@
   "title": "Abholbar Mittags",
   "subtitle": "…Abhol/bar und Kost/bar von 11-14 Uhr",
   "placed": "Startseite",
+  "position": 1,
   "speisen": [
     {
       "food": "Täglich frischer Mittagstisch*",
